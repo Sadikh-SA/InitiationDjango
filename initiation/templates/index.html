@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Initiation </title>
+</head>
+<body>
+    <h2>Simples CRUD DJANGO</h2>
+    <p>CRUD pour Créer , Lister, Modifier et Supprimer</p>
+    {% if names_from_context %}
+        <ul>
+            {% for name in names_from_context %}
+                <li>{{ name.name_value }}  <button>Delete</button> <button>Update</button></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>SVP connectes-toi en tant que admin et ajoute à partir de 'INITIATION'</h3>
+    {% endif %}
+    <h3>Ajouter Name</h3>
+    <button>CREER</button>
+</body>
+</html>

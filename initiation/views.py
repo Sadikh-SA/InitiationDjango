@@ -1,12 +1,10 @@
-from django.http import HttpResponse
-from django.shortcuts import render
 
-def home(request):
-    """ Exemple de page non valide au niveau HTML pour que l'exemple soit concis """
-    return HttpResponse("""
-        <h1>Bienvenue sur ma Page !</h1>
-        <p>Ceci est une initiation sur le framework Django!</p>
-    """)
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from initiation.models import Name
 
 # Create your views here.
+
+def index(request):
+    listes_names = Name.objects.all()
+    context_dict = {'names_from_context': listes_names}
+    return render(request, 'index.html', context_dict)
